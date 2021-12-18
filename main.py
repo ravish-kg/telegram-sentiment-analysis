@@ -39,12 +39,8 @@ def calculate_sentiment_score(messages):
 
     for index in tqdm(range(0, len(messages))):
         polarity_scores = analyser.polarity_scores(messages[index]['text'])
-
-        if polarity_scores['neg'] > polarity_scores['pos']:
-            sentiment_scores.append((messages[index]['date'], messages[index]['text'], 0 - polarity_scores['neg']))
-        elif polarity_scores['neg'] < polarity_scores['pos']:
-            sentiment_scores.append((messages[index]['date'], messages[index]['text'], 0 + polarity_scores['pos']))
-
+        sentiment_scores.append((messages[index]['date'], messages[index]['text'], polarity_scores['compound']))
+        
     return sentiment_scores
 
 
