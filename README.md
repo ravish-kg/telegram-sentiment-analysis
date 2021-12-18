@@ -1,7 +1,7 @@
 # telegram-sentiment-analysis
 
 # How to run the code
-1. Installing packages included in packages.txt
+1. Installing packages included in requirements.txt
 2. python main.py
 
 # Summary
